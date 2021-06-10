@@ -1,5 +1,11 @@
 import React from 'react';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
+
+const searchBtnStyle = {
+  backgroundColor: 'purple',
+  border: 'none',
+};
+
 const Search = ({ word, setWord, handleSubmit }) => {
   return (
     <Container className="mt-4">
@@ -16,7 +22,7 @@ const Search = ({ word, setWord, handleSubmit }) => {
                 />
               </Col>
               <Col>
-                <Button variant="primary" type="submit">
+                <Button style={searchBtnStyle} type="submit">
                   Search
                 </Button>
               </Col>
