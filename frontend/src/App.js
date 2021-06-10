@@ -2,13 +2,14 @@ import { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/Header';
 import Search from './components/ Search';
+import ImageCard from './components/ImageCard';
 
 const UNSPLASH_KEY = process.env.REACT_APP_UNSPLASH_KEY;
 
-function App() {
+const App = () => {
   const [word, setWord] = useState('');
   const [images, setImages] = useState([]);
-  console.log(images);
+  console.log(images[0]);
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
@@ -17,7 +18,7 @@ function App() {
     )
       .then((res) => res.json())
       .then((data) => {
-        setImages([data, ...images]);
+        setImages([{ ...data, title: word }, ...images]);
       })
       .catch((err) => {
         console.log(err);
@@ -29,8 +30,9 @@ function App() {
     <div className="App">
       <Header title="Images Gallery" />
       <Search word={word} setWord={setWord} handleSubmit={handleSearchSubmit} />
+      {!!images.length && <ImageCard image={images[0]} />}
     </div>
   );
-}
+};
 
 export default App;
