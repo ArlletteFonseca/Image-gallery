@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Search from './components/ Search';
 import ImageCard from './components/ImageCard';
 import { Container, Row, Col } from 'react-bootstrap';
+import Welcome from './components/Welcome';
 
 const UNSPLASH_KEY = process.env.REACT_APP_UNSPLASH_KEY;
 
@@ -41,6 +42,7 @@ const App = () => {
           ))}
         </Row>
       </Container>
+      <Welcome />
     </div>
   );
 };
