@@ -31,7 +31,7 @@ const App = () => {
   };
   return (
     <div className="App">
-      <Header title="Images Gallery" />
+      <Header title="Image Gallery" />
       <Search word={word} setWord={setWord} handleSubmit={handleSearchSubmit} />
       <Container className="mt-4">
         {images.length ? (
