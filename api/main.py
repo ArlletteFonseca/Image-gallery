@@ -1,6 +1,10 @@
 from flask import Flask, request
 
 app = Flask(__name__)
+
+UNSPLASH_URL="https://api.unsplash.com/photos/random"
+UNSPLASH_KEY="5_Eti1RbWi0hpPAkTNi7mBgM1AAAhP1Xo676d31mnGk"
+
 #endpoint
 @app.route("/new-image")
 
